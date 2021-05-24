@@ -26,3 +26,9 @@ func _get_input() -> void:
 	if Input.is_action_just_pressed("ui_select"):
 		_velocity.y = Vector2.UP.y * jump_speed
 
+
+func on_hit(trap_color: int) -> void:
+	if (_color_node.current_color == trap_color):
+		print("Ok")
+	else:
+		print("Game Over")
