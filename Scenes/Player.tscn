@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/color_node.gd" type="Script" id=1]
-[ext_resource path="res://Assets/background.svg" type="Texture" id=2]
 [ext_resource path="res://Assets/player.svg" type="Texture" id=3]
 [ext_resource path="res://Src/Player.gd" type="Script" id=4]
 
@@ -16,17 +15,10 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 0, 3840 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-rotation = 1.5708
-texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 3840, 1080 )
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_bottom = 1.0
+editor_draw_drag_margin = true
 
 [node name="ColorNode" type="Sprite" parent="."]
 texture = ExtResource( 3 )
