@@ -24,7 +24,11 @@ editor_draw_drag_margin = true
 self_modulate = Color( 0.196078, 0.858824, 0.941176, 1 )
 texture = ExtResource( 3 )
 script = ExtResource( 1 )
-current_color = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -50, -50, 100, 100 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_screen_exited" flags=6]
