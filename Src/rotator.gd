@@ -1,6 +1,6 @@
 extends Node2D
 
-export var rot_speed := 1.0
+export var rot_speed := 0.5
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
