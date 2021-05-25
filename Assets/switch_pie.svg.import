@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/switch_pie.svg-205b3ec179c13fb2a361e83f2c68d98a.stex"
+path="res://.import/switch_pie.svg-0a69013b4625d4e6801ea15b6cabe1a1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/switch_pie.svg"
-dest_files=[ "res://.import/switch_pie.svg-205b3ec179c13fb2a361e83f2c68d98a.stex" ]
+source_file="res://assets/switch_pie.svg"
+dest_files=[ "res://.import/switch_pie.svg-0a69013b4625d4e6801ea15b6cabe1a1.stex" ]
 
 [params]
 

@@ -13,7 +13,7 @@ func _ready() -> void:
 	_color_node.set_current_color(randi() % _color_node.COLORS.size())
 
 
-func _physics_process(delta) -> void:
+func _physics_process(delta: float) -> void:
 	_velocity.y += Vector2.DOWN.y * gravity * delta
 	_get_input()
 	_velocity = move_and_slide(_velocity)

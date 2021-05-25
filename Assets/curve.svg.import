@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/curve.svg-4214567f8338e539bd15c35d9ec447cb.stex"
+path="res://.import/curve.svg-7387929ab09b6f27481502492caaf78d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/curve.svg"
-dest_files=[ "res://.import/curve.svg-4214567f8338e539bd15c35d9ec447cb.stex" ]
+source_file="res://assets/curve.svg"
+dest_files=[ "res://.import/curve.svg-7387929ab09b6f27481502492caaf78d.stex" ]
 
 [params]
 

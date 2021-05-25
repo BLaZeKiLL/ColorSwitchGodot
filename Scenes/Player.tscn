@@ -21,8 +21,10 @@ drag_margin_bottom = 1.0
 editor_draw_drag_margin = true
 
 [node name="ColorNode" type="Sprite" parent="."]
+self_modulate = Color( 0.196078, 0.858824, 0.941176, 1 )
 texture = ExtResource( 3 )
 script = ExtResource( 1 )
+current_color = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

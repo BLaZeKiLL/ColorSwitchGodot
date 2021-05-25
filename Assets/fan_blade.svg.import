@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fan_blade.svg-7c14515a0fedf887764031da699a47d2.stex"
+path="res://.import/fan_blade.svg-aa7959140e8e9bf11558695dd1c65e8a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fan_blade.svg"
-dest_files=[ "res://.import/fan_blade.svg-7c14515a0fedf887764031da699a47d2.stex" ]
+source_file="res://assets/fan_blade.svg"
+dest_files=[ "res://.import/fan_blade.svg-aa7959140e8e9bf11558695dd1c65e8a.stex" ]
 
 [params]
 
