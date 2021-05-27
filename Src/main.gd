@@ -9,5 +9,5 @@ func _ready() -> void:
 
 
 func _on_game_over() -> void:
-	_player.set_active(false)
-	print("Game Over")
+#	_player.set_active(false)
+	pass

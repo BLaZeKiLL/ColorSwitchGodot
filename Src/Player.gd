@@ -2,18 +2,21 @@ extends KinematicBody2D
 
 signal game_over
 
-export var jump_speed := 1000 # used as impulse
-export var gravity := 1000
+export var jump_speed := 1250 # used as impulse
+export var gravity := 2500
+export var reclaim_zone := 3000
 
 onready var _color_node := $ColorNode
 onready var _camera := $Camera2D
 onready var _collision := $CollisionShape2D
+onready var _visibility := $Camera2D/Area2D/CollisionShape2D
 
 var _velocity := Vector2()
 
 
 func _ready() -> void:
 	_color_node.set_current_color(randi() % _color_node.COLORS.size())
+	_set_visibility_position()
 
 
 func _physics_process(delta: float) -> void:
@@ -33,11 +36,19 @@ func set_active(state: bool) -> void:
 	if state: show()
 	else: hide()
 	
-	$Camera2D.smoothing_enabled = state
-	$CollisionShape2D.set_deferred("disabled", not state)
+	_camera.smoothing_enabled = state
+	_collision.set_deferred("disabled", not state)
 	
 	set_process(state)
 	set_physics_process(state)
+
+
+func _on_screen_exited() -> void:
+	_game_over()
+
+
+func _game_over() -> void:
+	emit_signal("game_over")
 
 
 func _get_input() -> void:
@@ -47,9 +58,6 @@ func _get_input() -> void:
 		_velocity.y = Vector2.UP.y * jump_speed
 
 
-func _game_over() -> void:
-	emit_signal("game_over")
-
-
-func _on_screen_exited() -> void:
-	_game_over()
+func _set_visibility_position() -> void:
+	(_visibility.shape as RectangleShape2D).extents = Vector2(get_viewport_rect().size.x / 2, 20)
+	_visibility.position = Vector2.DOWN * reclaim_zone
