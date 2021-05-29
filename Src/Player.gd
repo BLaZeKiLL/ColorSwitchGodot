@@ -15,8 +15,9 @@ var _velocity := Vector2()
 
 
 func _ready() -> void:
-	_color_node.set_current_color(randi() % _color_node.COLORS.size())
 	_set_visibility_position()
+	_color_node.set_current_color(randi() % _color_node.COLORS.size())
+	set_active(false)
 
 
 func _physics_process(delta: float) -> void:
