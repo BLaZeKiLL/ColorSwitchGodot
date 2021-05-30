@@ -2,13 +2,13 @@ extends Node2D
 
 
 export (Array, PackedScene) var _traps : Array
-export (int) var _trap_pool_instance_count := 3
+export (int) var _entity_instance_count := 3
 export (int) var _trap_seperation := 2000
 
 onready var _reclaim_area := $"../Player/Camera2D/Area2D"
 
 var _trap_pool := []
-var _last_position := Vector2(0, 1000)
+var _last_trap_position := Vector2(0, 1000)
 
 
 func _ready() -> void:
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _create_pool() -> void:
 	for trap in _traps:
-		for i in _trap_pool_instance_count:
+		for i in _entity_instance_count:
 			_trap_pool.push_back(trap.instance())
 	
 #	_trap_pool.shuffle()
@@ -31,8 +31,8 @@ func _create_pool() -> void:
 func _trap_claim() -> void:
 	var trap : Node2D = _trap_pool.pop_back()
 	
-	_last_position += Vector2.UP * _trap_seperation
-	trap.position = _last_position
+	_last_trap_position += Vector2.UP * _trap_seperation
+	trap.position = _last_trap_position
 
 	add_child(trap)
 	print("Claiming : ", trap.name, " From : ", trap.position)

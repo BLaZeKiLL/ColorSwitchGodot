@@ -9,5 +9,5 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node) -> void:
-	if (body.has_method("on_hit")):
+	if body.has_method("on_hit"):
 		body.call("on_hit", _color_node.current_color)

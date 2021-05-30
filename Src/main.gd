@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var _player := $Player
-onready var _gui := $"UI/In Game"
+onready var _gui := $UI/InGame
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal game_over
+signal increase_score(score)
 
 export var jump_speed := 1250 # used as impulse
 export var gravity := 2500
@@ -12,11 +13,12 @@ onready var _collision := $CollisionShape2D
 onready var _visibility := $Camera2D/Area2D/CollisionShape2D
 
 var _velocity := Vector2()
+var _score := 0
 
 
 func _ready() -> void:
 	_set_visibility_position()
-	_color_node.set_current_color(randi() % _color_node.COLORS.size())
+	color_switch()
 	set_active(false)
 
 
@@ -42,6 +44,15 @@ func set_active(state: bool) -> void:
 	
 	set_process(state)
 	set_physics_process(state)
+
+
+func color_switch() -> void:
+	_color_node.set_current_color(randi() % _color_node.COLORS.size())
+
+
+func increase_score() -> void:
+	_score += 1
+	emit_signal("increase_score", _score)
 
 
 func _on_screen_exited() -> void:
