@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-signal game_over
+signal game_over(score)
 signal increase_score(score)
 
 export var jump_speed := 1250 # used as impulse
@@ -60,7 +60,7 @@ func _on_screen_exited() -> void:
 
 
 func _game_over() -> void:
-	emit_signal("game_over")
+	emit_signal("game_over", _score)
 
 
 func _get_input() -> void:
