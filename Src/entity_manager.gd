@@ -29,7 +29,7 @@ func _create_pool() -> void:
 
 
 func _trap_claim() -> void:
-	var trap : Node2D = _trap_pool.pop_back()
+	var trap : Trap = _trap_pool.pop_back()
 	
 	_last_trap_position += Vector2.UP * _trap_seperation
 	trap.position = _last_trap_position
@@ -37,6 +37,8 @@ func _trap_claim() -> void:
 	add_child(trap)
 	print("Claiming : ", trap.name, " From : ", trap.position)
 	print("=================================================")
+	
+	trap.activate_pickables()
 
 
 func _trap_reclaim(trap: Node2D) -> void:

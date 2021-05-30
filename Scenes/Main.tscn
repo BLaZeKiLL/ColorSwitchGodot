@@ -17,9 +17,12 @@ script = ExtResource( 5 )
 script = ExtResource( 6 )
 _traps = [ ExtResource( 3 ) ]
 _entity_instance_count = 6
+_trap_seperation = 1500
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 687.5 )
+gravity = 3000
+reclaim_zone = 2500
 
 [node name="UI" type="CanvasLayer" parent="."]
 

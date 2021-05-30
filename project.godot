@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://git_api.gdns"
+}, {
+"base": "Node2D",
+"class": "Trap",
+"language": "GDScript",
+"path": "res://src/trap.gd"
 } ]
 _global_script_class_icons={
 "ColorNode": "",
-"GitAPI": ""
+"GitAPI": "",
+"Trap": ""
 }
 
 [application]
