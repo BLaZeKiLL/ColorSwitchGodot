@@ -7,7 +7,7 @@ export var jump_speed := 1250 # used as impulse
 export var gravity := 2500
 export var reclaim_zone := 3000
 
-onready var _color_node := $ColorNode
+onready var _color_node : ColorNode = $ColorNode
 onready var _camera := $Camera2D
 onready var _collision := $CollisionShape2D
 onready var _visibility := $Camera2D/Area2D/CollisionShape2D
@@ -17,8 +17,9 @@ var _score := 0
 
 
 func _ready() -> void:
+	randomize()
 	_set_visibility_position()
-	color_switch()
+	_color_node.set_current_color(randi() % _color_node.COLORS.size())
 	set_active(false)
 
 
@@ -47,7 +48,9 @@ func set_active(state: bool) -> void:
 
 
 func color_switch() -> void:
-	_color_node.set_current_color(randi() % _color_node.COLORS.size())
+	var shift = randi() % (_color_node.COLORS.size() - 1)
+	var new_color = (_color_node.current_color + shift + 1) % _color_node.COLORS.size()
+	_color_node.set_current_color(new_color)
 
 
 func increase_score() -> void:

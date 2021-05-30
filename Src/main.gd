@@ -6,7 +6,6 @@ onready var _end_screen := $UI/EndScreen
 
 
 func _ready() -> void:
-	randomize()
 	_gui.hide()
 	_end_screen.hide()
 
