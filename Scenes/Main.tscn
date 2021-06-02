@@ -17,7 +17,6 @@ script = ExtResource( 5 )
 [node name="EntityManager" type="Node2D" parent="."]
 script = ExtResource( 6 )
 _traps = [ ExtResource( 3 ) ]
-_entity_instance_count = 6
 _trap_seperation = 1500
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

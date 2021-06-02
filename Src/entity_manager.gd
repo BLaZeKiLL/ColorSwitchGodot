@@ -2,7 +2,8 @@ extends Node2D
 
 
 export (Array, PackedScene) var _traps : Array
-export (int) var _entity_instance_count := 3
+export (int) var _entity_instance_count := 6
+export (int) var _active_count := 4
 export (int) var _trap_seperation := 2000
 
 onready var _reclaim_area := $"../Player/Camera2D/Area2D"
@@ -15,8 +16,8 @@ func _ready() -> void:
 # warning-ignore:return_value_discarded
 	_reclaim_area.connect("area_entered", self, "_on_reclaim_area")
 	_create_pool()
-	call_deferred("_trap_claim")
-	call_deferred("_trap_claim")
+	for i in _active_count:
+		call_deferred("_trap_claim")
 
 
 func _create_pool() -> void:
