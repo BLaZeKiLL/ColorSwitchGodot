@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Trap",
 "language": "GDScript",
-"path": "res://src/trap.gd"
+"path": "res://src/trap/trap.gd"
 } ]
 _global_script_class_icons={
 "ColorNode": "",

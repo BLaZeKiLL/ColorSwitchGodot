@@ -2,8 +2,8 @@
 
 [ext_resource path="res://src/color_node.gd" type="Script" id=1]
 [ext_resource path="res://assets/fan_blade.svg" type="Texture" id=2]
-[ext_resource path="res://src/trap_rotator.gd" type="Script" id=3]
-[ext_resource path="res://src/trap_part.gd" type="Script" id=4]
+[ext_resource path="res://src/trap/trap_rotator.gd" type="Script" id=3]
+[ext_resource path="res://src/trap/trap_part.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 400, 400 )
