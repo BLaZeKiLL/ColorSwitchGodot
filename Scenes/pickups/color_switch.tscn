@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/switch.svg" type="Texture" id=1]
-[ext_resource path="res://src/pickups/color_switch.gd" type="Script" id=2]
+[ext_resource path="res://src/pickups/pickup.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 50.0807
 
 [node name="ColorSwitch" type="Area2D"]
 script = ExtResource( 2 )
+action = "color_switch"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
